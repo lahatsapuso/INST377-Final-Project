@@ -36,15 +36,15 @@
                 width: 90%;
             }
         </style>
-        <script>
-            const translate = require('google-translate-api');
+        <script type="module">
+            import { translate } from "google-translate-api-browser";
 
-            translate('Ik spreek Engels', {to: 'en'}).then(res => {
-                console.log(res.text);
-                //=> I speak English
-                console.log(res.from.language.iso);
-                //=> nl
-            }).catch(err => {
+            translate("Je ne mangé pas six jours", { to: "en", corsUrl: "http://cors-anywhere.herokuapp.com/" })
+            .then(res => {
+                // I do not eat six days
+                console.log(res.text)
+            })
+            .catch(err => {
                 console.error(err);
             });
         </script>
