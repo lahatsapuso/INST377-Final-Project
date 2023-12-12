@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>translation page</title>
+        <title>paidgames</title>
         <style>
             body {
                 background-color: #f9858b;
@@ -31,20 +31,78 @@
                 background-color: pink;
                 color:#761137;
             }
+            .block {
+                background-color: white;
+                outline: solid 2px black;
+                width: 70%;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+            }
+            table, th, td {
+                border: 1px solid black;
+                font-size: large;
+            }
+            .chartcs {
+                background-color: white;
+                margin-left:auto;
+                margin-right: auto;
+                text-align: center;
+                width: 70%;
+            }
         </style>
+        <script defer type="text/javascript" src="project_JS.js"></script>
     </head>
-    <header><center><h1>INST 377 Final Project: EZ Translation</h1></center></header>
+    <header><center><h1>INST 377 Final Project: Game Tracker</h1></center></header>
 
-    <body>
+    <body onload="top_paid()">
         <nav id="main-nav">
             <ul>
                 <li> <a href="home.html">Home</a> </li>
-                <li> <a href="translation.html">Translation Page</a> </li>
-                <li> <a href="about.html">About</a> </li>
-                <li> <a href="help.html">Help</a> </li>
+                <li> <a href="paid.html">Paid Games</a> </li>
+                <li> <a href="free.html">Free Games</a> </li>
             </ul>
         </nav>
-        <center><h2><strong>Help</strong></h2></center>
-    </body>
+        <center><h2><strong>Paid Games</strong></h2></center>
 
+        <div class="block" id="options">
+            <form id="paid" onsubmit="">
+                <label for="upperPrice">Upper Price Limit: </label>
+                <input type="text" id="upperPrice" name="upperPrice">
+    
+                <label for="lowerPrice">Lowest Price Limit: </label>
+                <input for="lowerPrice" id="lowerPrice" name="lowerPrice">
+    
+                <label for="sortby">Sort By: </label>
+                <select name="sortby" id="sortby">
+                    <option value="Deal Rating">Deal Rating</option>
+                    <option value="Title">Title</option>
+                    <option value="Price">Price</option>
+                    <option value="Recent">Recent</option>
+                    <option value="Release">Release Date</option>
+                    <option value="Reviews">Reviews</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+
+
+
+        </div>
+
+        <br>
+
+        <div>
+            <div class="block">
+                <h3>Top Paid Games Table</h3><br>
+                <strong>Title: </strong><p>Title of Game</p><br>
+                <strong>Sale Price: </strong><p>Current Price of Game on Sale</p><br>
+                <strong>Deal Rating: </strong><p>Rating of Deal</p><br>
+                <strong>Steam Rating: </strong><p>Steam Rating of Deal</p><br>
+            </div>
+
+            <table id="gamedeals"; class="chartcs"></table>
+        </div>
+
+    </body>
 </html>
